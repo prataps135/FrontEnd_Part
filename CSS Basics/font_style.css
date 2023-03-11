@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+.edit{
+    font-family: fantasy;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+
+    text-align: center;
+    text-shadow: cyan 13px 8px 3px;
+}
+.google{
+    font-family: 'Rubik Iso', cursive;
+}
+p{
+    /* line-height: 40px; */
+    letter-spacing: 10px;
+    color: blueviolet;
+}
