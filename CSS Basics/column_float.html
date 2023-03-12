@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 1080px;
+            background-color: #ddd;
+            margin: 0 auto;
+        }
+        .divy{
+            border: dotted 1px black;
+            height: 200px;
+        }
+        #block7{
+            height: 50px;
+            background-color: black;
+            color: aliceblue;
+        }
+        .main_menu{
+            width: 60%;
+            float: left;
+            background-color: blanchedalmond;
+        }
+        .side_menu{
+            float: right;
+            width: 40%;
+        }
+        .bgcolor{
+            background-color: aquamarine;
+        }
+        .clearfix{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="divy" id="block1">HEADER</div>
+        <div class="navbar" id="block7">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Blog</a></li>
+            </ul>
+        </div>
+        <div class="bgcolor">
+        <div class="main_menu">
+        <div class="divy" id="block2">CONTENT 1</div>
+        <div class="divy" id="block3">CONTENT 2</div>
+        <div class="divy" id="block4">CONTENT 3</div>
+        </div>
+        <div class="side_menu">
+        <div class="" id="block5">CONTENT 4</div>
+        </div>
+        <div class="clearfix"></div></div>
+        <div class="divy clearfix" id="block6">FOOTER</div>
+    </div>
+</body>
+</html>
