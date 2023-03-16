@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="output">Hello from div</div>
+    <p>
+      <input type="text" id="newText" onchange="updateText()">  
+    </p>
+    <script>
+        var temp = document.getElementById('output');
+
+        function updateText(){
+            var textHolder = document.getElementById('newText').value;
+            temp.innerText = textHolder;
+        }
+    </script>
+</body>
+</html>

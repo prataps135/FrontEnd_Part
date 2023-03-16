@@ -1,0 +1,23 @@
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1 id="output">Welcome</h1>
+    </div>
+    <script>
+        document.write("Hello from js");    // inefficient way
+
+        // efficient way by using id
+        // document.getElementById('output').innerHTML = "Welcome From innerHTML";
+        var output = document.getElementById('output');
+        console.dir(output);
+        output.innerHTML = "Welcome From innerHTML";
+        output.childNodes[0].nodeValue = "Value Updated";
+    </script>
+</body>
+
+</html>

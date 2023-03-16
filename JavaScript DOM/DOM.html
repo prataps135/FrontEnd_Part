@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript DOM</h1>
+    <div>Defination :- </div>
+    <p>This is known as Document Object Model</p>
+    <script>
+        console.dir(document);
+        console.log(document.URL);
+        document.children[0].children[1].children[2].nodeValue = "Updated value";
+        console.dir(document.children[0].children[1].children[2].nodeValue);
+
+        var myFamily1 ={
+            dad : "Laurance",
+            aunt : "Jane",
+            uncle : "Bob"
+        };
+
+        console.log(myFamily1);
+
+        var myFamily2 ={
+            Laurance : {
+                "Mike" : 12,
+                "Lisa" : 9,
+                "John" : 6
+            },
+            Jane : {
+                "Sam" : 9,
+                "George" : 5
+            },
+            Bob : {
+                "BobJr" : 11,
+                "John" : 10
+            }
+        };
+
+        console.log(myFamily2);
+    </script>
+</body>
+</html>
