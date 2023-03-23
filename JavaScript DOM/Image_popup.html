@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="C:\Users\prata\Documents\GitHub\FrontEnd_Part\BootStrap\Images\image1.jpg" 
+    alt="Loading..." width="100px">
+
+    <script>
+        var imgList = document.getElementsByTagName("img");
+        console.log(imgList);
+
+        for(var i = 0; i <imgList.length; i++){
+            imgList[i].onclick = function(){
+                window.open(this.src,
+                    'resizeable=yes,scrollbar=yes');
+            }
+        }
+    </script>
+</body>
+</html>

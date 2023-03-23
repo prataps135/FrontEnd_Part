@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><h1>Welcome</h1></div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <script>
+        var listItems = document.getElementsByTagName('li');
+        console.log(listItems);
+        for(var x = 0; x < listItems.length; x++){
+            listItems[x].onmouseover = function() {
+                console.log(this);
+                this.style.backgroundColor = "red";
+            }
+            listItems[x].onmouseout = function() {
+                this.style.backgroundColor = "white";
+            }
+        }
+    </script>
+</body>
+</html>

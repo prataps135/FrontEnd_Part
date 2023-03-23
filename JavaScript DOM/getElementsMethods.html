@@ -6,6 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <p>One</p>
+        <p>Two</p>
+        <p>Three</p>
+        <p>Four</p>
+    </div>
+
+    <script>
+        var lItems = document.getElementsByTagName('div')[0];
+        console.dir(lItems.children[0].childNodes[0]);
+        console.log(lItems.children[0].childNodes[0].nodeValue);
+    </script>
 </body>
 </html>

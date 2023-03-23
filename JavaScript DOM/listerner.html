@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"><h1>Add and Remove</h1></div>
+    <div class="yellow">
+        <p>One</p>
+        <p>Two</p>
+        <p>Three</p>
+        <p>Four</p>
+    </div>
+    <label for="newText">
+        <input type="text" id="newText">
+    </label>
+
+    <script>
+        var output = document.getElementById('output');
+        output.onclick = myFun;
+
+        function myFun (){
+            console.log("Hello");
+        }
+
+        var newText = document.getElementById('newText');
+        newText.onchange= upText;
+
+        function upText(){
+            console.log(newText.value);
+        }
+
+        var output = document.querySelector(".yellow");
+        output.addEventListener("One",myFun1);
+        function myFun1 (){
+            console.log("Hello");
+        }
+    </script>
+</body>
+</html>

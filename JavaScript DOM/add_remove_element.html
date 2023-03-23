@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Heading"><h1>Add and Remove</h1></div>
+    <div class="yellow">
+        <p>One</p>
+        <p>Two</p>
+        <p>Three</p>
+        <p>Four</p>
+    </div>
+    <script>
+        // Creating element
+        var element1 = document.createElement('div');
+        element1.innerHTML="New element<br>Hello<br>Bye";
+        
+        // Adding element
+        var a = document.querySelectorAll('div.yellow');
+        console.log(a[0]);
+        a[0].append(element1);
+
+        // Remove element
+        a[0].removeChild(a[0].childNodes[1]);
+    </script>
+</body>
+</html>
