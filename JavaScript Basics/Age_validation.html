@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFun() {
+            myAge = document.getElementById('myAge').value;
+            if (myAge < 18) {
+                alert("Not Eligible");
+                newAge = prompt("Please enter a valid age");
+                alert("My new age is " + newAge);
+                conAge = confirm("Is this valid age?");
+                if (conAge) {
+                    alert("Good Luck");
+                } else {
+                    alert("Bye");
+                }
+            } else {
+                alert("Eligible");
+            }
+        }
+
+        function validation() {
+            myName = document.getElementById('myName').value;
+            if (myName.length == null || myName.length == 0 || myName == undefined) {
+                // alert("Name can't empty");
+                document.getElementById('msg').innerHTML = "<span style='color:red'>Name can't empty.</span>";
+
+            } else if (myName.length > 0 && myName.length < 3) {
+                // alert("Min 3 char allowed");
+                document.getElementById('msg').innerHTML = "<span style='color:red'>Min 3 char allowed.</span>";
+            } else if (myName.length > 10) {
+                // alert("Max 10 char allowed");
+                document.getElementById('msg').innerHTML = "<span style='color:red'>Max 10 char allowed.</span>";
+            } else {
+                document.getElementById('msg').innerHTML = "<span style='color:green'>Name is fine.</span>";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    Age : <input type="text" id="myAge">
+    <br><input type="submit" value="Age" onclick="myFun()"><br>
+    Name : <input type="text" id="myName"><br>
+    <span id="msg"></span><br>
+    <input type="submit" value="Name" onclick="validation()">
+</body>
+
+</html>
