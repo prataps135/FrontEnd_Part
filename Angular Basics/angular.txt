@@ -19,3 +19,8 @@ ng new project_name
 	tsc file_name
 	// run
 	node file_name
+
+	// routing
+	1. routerLink with a tag
+	2. <router-outlet></router-outlet>
+	3. router configuration
