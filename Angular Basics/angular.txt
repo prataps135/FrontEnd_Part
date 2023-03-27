@@ -6,3 +6,16 @@ ng new project_name
 	code .
 	// to run the application 
 	ng serve
+	// create component
+	ng g component name
+	
+	// it will create 4 files
+	1. HTML : static web page
+	2. CSS  : style,look
+	3. ts	: logical
+	4. spec.ts : testing
+
+	// compile ts file
+	tsc file_name
+	// run
+	node file_name
