@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun() {
+            document.write("Hello");
+        }
+
+        function sum() {
+            var a = 20;
+            var b = 10;
+            document.write("sum = " + (a + b));
+            console.log(a++);
+            console.log(a);
+        }
+        // console.log(a);
+    </script>
+</head>
+
+<body>
+    <input type="button" value="click" onclick="fun()"><br>
+    A <input type="text" name="A"><br>
+    B <input type="text" name="B"><br>
+    <input type="submit" onclick="sum()">
+</body>
+
+</html>

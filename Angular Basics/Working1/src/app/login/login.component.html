@@ -1,1 +1,16 @@
 <p>login works!</p>
+<h2>Hello {{userName}}</h2>
+Name : <input type="Text" #name>
+<input type="button" value="click" (click)="printName(name.value)"><br>
+<input type="button" value="click" [disabled]="myChoice">
+<hr>
+<ul *ngFor="let employee of emp">
+    <li>{{employee}}</li>
+</ul>
+<hr>
+<input type="text" #fruitsadd>
+<input type="button" value="Add Fruit" (click)="addFruit(fruitsadd.value)">
+<ul *ngFor="let fruit of fruits">
+    <li>{{fruit}}</li>
+</ul>
+

@@ -24,3 +24,37 @@ ng new project_name
 	1. routerLink with a tag
 	2. <router-outlet></router-outlet>
 	3. router configuration
+
+
+Things done:-
+1. Component
+2. Routing
+3. Data Binding ={1.event(), 2.property[], 3.Interpolation{}}
+4. Directive 
+	A. Structural
+		*ngif="",*ngfor="",*ngswtich="",
+	B. Attribute
+		[ngclass],[ngstyle]
+5. Pipe
+	ng g pipe pipeName (to create custom pipes)
+
+	transform the data
+	| we use pipe to change string like upperCase,lowerCase
+	directly use ready made methods with pipe
+6. Form
+	a. template driven form
+	b. reactive driven form
+	
+	6.1. Life cycle methods
+		1. init		
+		2. service
+		3. destroy
+7. Services
+	ng g service serviceName
+8. http Forms
+
+	Front end: Angular
+	Back end: Spring
+	Data base : MySQl, H2
+
+git clone https://github.com/Thaneshwara848/SimpleLearn_Web_B15.git
