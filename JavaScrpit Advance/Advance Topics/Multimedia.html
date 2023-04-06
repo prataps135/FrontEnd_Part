@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function play(){
+            var myVideo = document.getElementById("video1");
+            console.log(myVideo);
+            if(myVideo.paused){
+                myVideo.play();
+            }else{
+                myVideo.pause();
+            }
+        }
+        function stop(){
+            var myVideo = document.getElementById("video1");
+
+            myVideo.pause();
+            myVideo.currentTime=0;
+        }
+    </script>
+</head>
+<body>
+    <video id="video1" name="video1" width="360px">
+        <source src="resourse/video.mp4"> Browser didn't support html.
+    </video>
+
+    <form action="#" id="form" name="form" method="get">
+        <input type="button" value="play/pause" onclick="play()">
+        <input type="button" value="stop" onclick="stop()">
+    </form>
+</body>
+</html>

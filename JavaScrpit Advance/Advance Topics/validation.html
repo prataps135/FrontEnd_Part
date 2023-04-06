@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ValidationFun() {
+            console.log("This is working");
+            var usern = document.EpicForm.Username.value;
+            // console.log(document.EpicForm.Username.value);
+            if (usern == "") {
+                console.log("Username not should be Empty");
+            } else if (usern.length < 10) {
+                console.log("Length should atleast 10 characters");
+            } else {
+                console.log("Fantastic");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="EpicForm">
+        <input type="text" name="Username" placeholder="Name">
+
+    </form>
+    <div onclick="ValidationFun()">
+        Click Me
+    </div>
+</body>
+
+</html>
