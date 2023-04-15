@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@types/node": "^18.15.11",
+    "@types/underscore": "^1.11.4",
+    "underscore": "^1.13.6"
+  }
+}
