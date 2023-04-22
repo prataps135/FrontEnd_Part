@@ -6,19 +6,31 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { TransformDirective } from './transform.directive';
 import { SafePipe } from './pipe/safe/safe.pipe';
+import { CoreModule } from './core/core.module';
+import { User } from './model/user';
+import { UserService } from './user/user.service';
+import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
+  // Declarations only accept component pipe and directives
   declarations: [
     AppComponent,
     UserComponent,
     TransformDirective,
-    SafePipe
+    SafePipe,
+    // HeaderComponent
+    // CoreModule
+    // User
+    // UserService
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule
   ],
+  exports:[],
   providers: [],
-  bootstrap: [AppComponent]
+  entryComponents:[],
+  bootstrap: [AppComponent,UserComponent]
 })
 export class AppModule { }
