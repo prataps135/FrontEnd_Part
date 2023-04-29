@@ -1,0 +1,16 @@
+<!-- <p>string-interpolation works!</p> -->
+
+<p>{{message + ' Hello from property'}}</p>
+
+<p innerText={{message}}>
+    {{message + ' This gona be overridden'}}
+</p>
+
+<p>
+    {{'Random message'}}
+</p>
+
+<!-- Every time Angular perform change ditection this method will called -->
+<p>
+    {{getMessage()}}
+</p>

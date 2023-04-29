@@ -10,6 +10,14 @@ import { CoreModule } from './core/core.module';
 import { User } from './model/user';
 import { UserService } from './user/user.service';
 import { HeaderComponent } from './core/header/header.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { UsersComponent } from './components/users/users.component';
+import { User1Component } from './components/users/user1/user1.component';
+import { StringInterpolationComponent } from './components/bindings/string-interpolation/string-interpolation.component';
+import { PropertyBindingComponent } from './components/bindings/property-binding/property-binding.component';
+import { EventBindingComponent } from './components/bindings/event-binding/event-binding.component';
+import { HelloComponent } from './components/hello/hello/hello.component';
+import { CounterActionsComponent } from './counter-actions/counter-actions.component';
 
 @NgModule({
   // Declarations only accept component pipe and directives
@@ -18,6 +26,14 @@ import { HeaderComponent } from './core/header/header.component';
     UserComponent,
     TransformDirective,
     SafePipe,
+    ChatComponent,
+    UsersComponent,
+    User1Component,
+    StringInterpolationComponent,
+    PropertyBindingComponent,
+    EventBindingComponent,
+    HelloComponent,
+    CounterActionsComponent,
     // HeaderComponent
     // CoreModule
     // User
