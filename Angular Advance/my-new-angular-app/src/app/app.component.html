@@ -9,5 +9,22 @@
 <!-- <app-property-binding></app-property-binding> -->
 <!-- <app-event-binding></app-event-binding> -->
 
-<h1>@Input</h1>
+<!-- <h1>@Input</h1>
 <app-hello [name]="title"></app-hello>
+
+<div>Current value of the counter is <span [class]="classToSet">{{counter}}</span></div>
+<app-counter-action (counterChange)="onCounterChange($event)"></app-counter-action> -->
+
+<!-- two way binding -->
+<!-- <div>Current value of the counter is <span [class]="classToSet">{{counter}}</span></div>
+<app-two-way-counter [(counter)]='counter'></app-two-way-counter>
+
+<hr>
+<input type="text" [(ngModel)]="title">
+<span>{{title}}</span> -->
+
+<!-- Attribute binding -->
+<!-- <app-attribute-binding></app-attribute-binding> -->
+
+<!-- Class binding -->
+<app-class-binding></app-class-binding>

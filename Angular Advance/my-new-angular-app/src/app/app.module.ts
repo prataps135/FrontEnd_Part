@@ -16,12 +16,17 @@ import { User1Component } from './components/users/user1/user1.component';
 import { StringInterpolationComponent } from './components/bindings/string-interpolation/string-interpolation.component';
 import { PropertyBindingComponent } from './components/bindings/property-binding/property-binding.component';
 import { EventBindingComponent } from './components/bindings/event-binding/event-binding.component';
-import { HelloComponent } from './components/hello/hello/hello.component';
-import { CounterActionsComponent } from './counter-actions/counter-actions.component';
+import { HelloComponent } from './components/hello/hello.component';
+import { CounterActionComponent } from './components/bindings/counter-action/counter-action.component';
+import { TwoWayCounterComponent } from './components/bindings/two-way-counter/two-way-counter.component';
+import { FormsModule } from '@angular/forms';
+import { AttributeBindingComponent } from './components/bindings/attribute-binding/attribute-binding.component';
+import { ClassBindingComponent } from './components/bindings/class-binding/class-binding.component';
 
 @NgModule({
   // Declarations only accept component pipe and directives
   declarations: [
+    
     AppComponent,
     UserComponent,
     TransformDirective,
@@ -33,13 +38,17 @@ import { CounterActionsComponent } from './counter-actions/counter-actions.compo
     PropertyBindingComponent,
     EventBindingComponent,
     HelloComponent,
-    CounterActionsComponent,
+    CounterActionComponent,
+    TwoWayCounterComponent,
+    AttributeBindingComponent,
+    ClassBindingComponent,
     // HeaderComponent
     // CoreModule
     // User
     // UserService
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     CoreModule
