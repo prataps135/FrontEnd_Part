@@ -22,6 +22,8 @@ import { TwoWayCounterComponent } from './components/bindings/two-way-counter/tw
 import { FormsModule } from '@angular/forms';
 import { AttributeBindingComponent } from './components/bindings/attribute-binding/attribute-binding.component';
 import { ClassBindingComponent } from './components/bindings/class-binding/class-binding.component';
+import { StyleBindingComponent } from './components/bindings/style-binding/style-binding.component';
+import { NoteListComponent } from './components/lifeCycleHooks/note-list/note-list.component';
 
 @NgModule({
   // Declarations only accept component pipe and directives
@@ -42,6 +44,8 @@ import { ClassBindingComponent } from './components/bindings/class-binding/class
     TwoWayCounterComponent,
     AttributeBindingComponent,
     ClassBindingComponent,
+    StyleBindingComponent,
+    NoteListComponent,
     // HeaderComponent
     // CoreModule
     // User
