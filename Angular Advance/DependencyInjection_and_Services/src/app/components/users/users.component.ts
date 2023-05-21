@@ -13,8 +13,8 @@ export class UsersComponent {
   constructor(private userService : UserService, private activatedRoute:ActivatedRoute){}
 
   ngOnInit(){
-    // this.users = this.userService.getUsers();
+    this.users = this.userService.getUsers();
 
-    this.activatedRoute.data.forEach(data => this.users = data['users']);
+    // this.activatedRoute.data.forEach(data => this.users = data['users']);
   }
 }
