@@ -10,11 +10,13 @@ import { UserService } from 'src/app/services/user/user.service';
 export class UsersComponent {
   users: Array< IUser >;
 
-  constructor(private userService : UserService, private activatedRoute:ActivatedRoute){}
+  constructor(private userService : UserService){}
 
   ngOnInit(){
-    this.users = this.userService.getUsers();
+    // this.users = this.userService.getUsers();
 
-    // this.activatedRoute.data.forEach(data => this.users = data['users']);
+    this.userService.getUsersViaREST().subscribe(
+      users => this.users = users
+    );
   }
 }

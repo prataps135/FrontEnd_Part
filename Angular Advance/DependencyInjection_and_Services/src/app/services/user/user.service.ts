@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IUser } from 'src/app/interfaces/user';
 
 @Injectable({
@@ -6,7 +8,10 @@ import { IUser } from 'src/app/interfaces/user';
 })
 export class UserService {
 
-  private users: IUser[] = [
+  private _rootUrl: string = 'https://jsonplaceholder.typicode.com/users';
+  private _rootPostsUrl: string = 'https://jsonplaceholder.typicode.com/comments';
+
+  private _users: IUser[] = [
     { id: 1, name: "Leanne Graham", email: "Sincere@april.biz" },
     { id: 2, name: "Ervin Howell", email: "Shanna@melissa.tv" },
     { id: 3, name: "Clementine Bauch", email: "Nathan@yesenia.net" },
@@ -20,8 +25,39 @@ export class UserService {
   ];
 
   getUsers(): IUser[] {
-    return this.users;
+    return this._users;
   }
 
-  constructor() { }
+  getUserByID(id: number): IUser {
+    return this._users.filter(user => user.id === id)[0];
+  }
+
+  // CRUD operation over API
+  // Below 6 functions
+  getUsersViaREST(): Observable<IUser[]> {
+    let header = new HttpHeaders().set('Auturization', 'Bearer your-token-is-here');
+    return this.http.get<IUser[]>(this._rootUrl, { headers: header });
+  }
+
+  getUserByIdViaREST(id: number): Observable<IUser> {
+    return this.http.get<IUser>(`${this._rootUrl}/${id}`);
+  }
+
+  createUser(user: IUser): Observable<IUser> {
+    return this.http.post<IUser>(this._rootUrl, user);
+  }
+
+  updateUser(user: IUser): Observable<IUser> {
+    return this.http.put<IUser>(`${this._rootUrl}/${user.id}`, user);
+  }
+
+  deleteUser(id: number): Observable<IUser> {
+    return this.http.delete<IUser>(`${this._rootUrl}/${id}`);
+  }
+
+  getUserPosts(id:number):Observable<any>{
+
+  }
+
+  constructor(private http: HttpClient) { }
 }

@@ -2,5 +2,15 @@
     Details of the user <br>
     User ID : {{user.id}}<br>
     User Name : {{user.name}}<br>
-    User email : {{user.email}}
+    User email : {{user.email}} <br>
+    UserName :{{user.username}} <br>
+    UserAddress : <br>
+    <pre>
+        {{user.address | json}}
+    </pre>
+    <hr width="480px">
+    <button class="btn btn-success" (click)="createUser()">Create User</button>
+    <button class="btn btn-primary" (click)="updateUser()">Update User</button>
+    <button class="btn btn-danger" (click)="deleteUser()">Delete User</button>
+    <button class="btn btn-warning" (click)="getUserPosts()">Get Posts By User</button>
 </div>
