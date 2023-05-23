@@ -1,16 +1,23 @@
 <div>
-    Details of the user <br>
-    User ID : {{user.id}}<br>
-    User Name : {{user.name}}<br>
-    User email : {{user.email}} <br>
-    UserName :{{user.username}} <br>
-    UserAddress : <br>
-    <pre>
-        {{user.address | json}}
-    </pre>
+    <div *ngIf="user">
+        Details of the user <br>
+        User ID : {{user.id}}<br>
+        User Name : {{user.name}}<br>
+        <!-- User email : <a href="mailto://{{user.email}}">{{user.email}}</a> <br> -->
+        User email : <a href="{{user.email | appendor:'pre' : 'mailto://'}}">{{user.email}}</a> <br>
+        User phone : <a href="{{user.phone | appendor: 'pre' : 'tel://'}}">{{user.phone}}</a>
+        UserName :{{user.username}} <br>
+        UserAddress : <br>
+        <pre>
+            {{user.address | json}}
+        </pre>
+    </div>
     <hr width="480px">
     <button class="btn btn-success" (click)="createUser()">Create User</button>
     <button class="btn btn-primary" (click)="updateUser()">Update User</button>
     <button class="btn btn-danger" (click)="deleteUser()">Delete User</button>
     <button class="btn btn-warning" (click)="getUserPosts()">Get Posts By User</button>
+
+    <h3>Users posts</h3>
+    <pre>{{ posts | async | json}}</pre>
 </div>

@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user/user.service';
 export class UserDetailsComponent implements OnInit {
 
   user: IUser;
+  posts: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -61,6 +62,6 @@ export class UserDetailsComponent implements OnInit {
 
   }
   getUserPosts() {
-
+    this.posts = this.userService.getUserPosts(this.user.id);
   }
 }

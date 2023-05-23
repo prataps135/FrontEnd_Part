@@ -1,7 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { IUser } from 'src/app/interfaces/user';
+
+import { map, retry, catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,17 @@ export class UserService {
 
   private _rootUrl: string = 'https://jsonplaceholder.typicode.com/users';
   private _rootPostsUrl: string = 'https://jsonplaceholder.typicode.com/comments';
+  private _prop: string = 'foo';
+  public propChanged: BehaviorSubject<string> = new BehaviorSubject<string>(this._prop);
+
+  getProp(): string {
+    return this._prop;
+  }
+
+  setProp(value: string): void {
+    this._prop = value;
+    this.propChanged.next(this._prop);
+  }
 
   private _users: IUser[] = [
     { id: 1, name: "Leanne Graham", email: "Sincere@april.biz" },
@@ -32,11 +45,24 @@ export class UserService {
     return this._users.filter(user => user.id === id)[0];
   }
 
+  addUser(user:IUser){
+    this._users.push(user);
+  }
+
   // CRUD operation over API
   // Below 6 functions
   getUsersViaREST(): Observable<IUser[]> {
     let header = new HttpHeaders().set('Auturization', 'Bearer your-token-is-here');
     return this.http.get<IUser[]>(this._rootUrl, { headers: header });
+    // .map(users => {
+    //   return users.map(user =>{
+    //     return {
+    //       id:user.id,
+    //       name:user.name,
+    //       email:user.email
+    //     }
+    //   })
+    // });
   }
 
   getUserByIdViaREST(id: number): Observable<IUser> {
@@ -55,8 +81,9 @@ export class UserService {
     return this.http.delete<IUser>(`${this._rootUrl}/${id}`);
   }
 
-  getUserPosts(id:number):Observable<any>{
-
+  getUserPosts(id: number): Observable<any> {
+    let params = new HttpParams().set('userId', id.toString());
+    return this.http.get(this._rootPostsUrl, { params });
   }
 
   constructor(private http: HttpClient) { }

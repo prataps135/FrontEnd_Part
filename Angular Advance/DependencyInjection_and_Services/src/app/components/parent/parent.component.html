@@ -1,0 +1,19 @@
+<app-one></app-one>
+<app-two></app-two>
+
+<hr>
+
+<h4>Pure and Impure Pipes</h4>
+
+<button class="btn btn-primary" (click)="addUser()">Add User</button>
+
+<input type="text" [(ngModel)]="filterIdType">
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of users | filter : filterIdType">
+        <div class="alert alert-success" role="alert">
+            UserID {{user.id}},
+            Username {{user.name}}
+        </div>
+    </li>
+</ul>

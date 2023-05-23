@@ -1,0 +1,20 @@
+<h3>List Items</h3>
+<button class="btn btn-primary" (click)="showList = !showList">Toggle list visibility</button>
+<div *ngIf="showList">
+    <ul class="list-group">
+        <li clsss="list-group-item" *ngFor="let message of messages; let i = index">
+            Index : {{i}} || Message : {{message}}
+        </li>
+    </ul>
+</div>
+<hr>
+
+<h4>NgSwitch</h4>
+<input type="text" class="form-control" [(ngModel)]="alertType"><br>
+<div [ngSwitch]="alertType">
+    <div *ngSwitchCase="'success'" class="alert alert-success" role="alert">Welcome you successfully read these alert markup</div>
+    <div *ngSwitchCase="'info'" class="alert alert-info" role="alert">Welcome you successfully read these alert markup</div>
+    <div *ngSwitchCase="'warning'" class="alert alert-warning" role="alert">Welcome you successfully read these alert markup</div>
+    <div *ngSwitchCase="'danger'" class="alert alert-danger" role="alert">Welcome you successfully read these alert markup</div>
+    <div *ngSwitchDefault class="alert" role="alert">Welcome you successfully read these alert markup</div>
+</div>
