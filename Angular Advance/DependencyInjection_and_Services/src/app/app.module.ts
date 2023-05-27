@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,13 @@ import { UnlessDirective } from './directives/unless/unless.directive';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { AppendorPipe } from './pipes/appendor/appendor.pipe';
 import { FilterPipe } from './pipes/filter/filter.pipe';
+import { NewUserComponent } from './components/new-user/new-user.component';
+import { NewUserReactiveComponent } from './components/new-user-reactive/new-user-reactive.component';
+
+// firebase modules
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from './environment/environment';
 
 @NgModule({
   declarations: [
@@ -43,13 +50,18 @@ import { FilterPipe } from './pipes/filter/filter.pipe';
     PipesComponent,
     AppendorPipe,
     FilterPipe,
+    NewUserComponent,
+    NewUserReactiveComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFireDatabaseModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

@@ -1,0 +1,101 @@
+<div class="container">
+    <h3>New User Reactive Form</h3>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control">
+
+            <div class="alert alert-danger" *ngIf="name?.invalid && name?.touched">
+                <p *ngIf="name?.errors?.['required']">Name is required</p>
+                <p *ngIf="name?.errors?.['minlength']">Name must be atleast {{name?.errors?.['minlength'].requiredLength}} characters long</p>
+                <p *ngIf="name?.errors?.['pattern']">Name can only be John Doe</p>
+            </div>
+
+            <!-- <div class="alert alert-danger" *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+                <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+                <p *ngIf="userForm.get('name')?.errors?.['minlength']">Name must be atleast 8 characters long</p>
+                <p *ngIf="userForm.get('name')?.errors?.['pattern']">Name can only be John Doe</p>
+            </div> -->
+        </div>
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" formControlName="username" class="form-control">
+            <p *ngIf="username?.pending">Checking for uniqueness from Server values...</p>
+            <div class="alert alert-danger" *ngIf="username?.invalid && username?.touched">
+                <!-- <p *ngIf="username?.errors?.['unique']">Username must be unique!</p> -->
+                <p *ngIf="username?.errors?.['asyncUnique']">Username must be unique!</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" formControlName="email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" formControlName="phone" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="website">Website</label>
+            <input type="text" formControlName="website" class="form-control">
+        </div>
+
+        <fieldset formGroupName="address">
+            <legend>Address</legend>
+            <div class="form-group">
+                <label for="street">Street</label>
+                <input type="text" formControlName="street" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="suite">Suite</label>
+                <input type="text" formControlName="suite" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" formControlName="city" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Zipcode</label>
+                <input type="text" formControlName="zipcode" class="form-control">
+            </div>
+        </fieldset>
+
+        <fieldset formGroupName="geo">
+            <legend>Geo</legend>
+            <div class="form-group">
+                <label for="lat">Lat</label>
+                <input type="text" formControlName="lat" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="Lng">Lng</label>
+                <input type="text" formControlName="lng" class="form-control">
+            </div>
+        </fieldset>
+
+        <fieldset formGroupName="company">
+            <legend>Company</legend>
+            <div class="form-group">
+                <label for="name">Company Name</label>
+                <input type="text" formControlName="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="catchPhrase">Catch Phrase</label>
+                <input type="text" formControlName="catchPhrase" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="bs">BS</label>
+                <input type="text" formControlName="bs" class="form-control">
+            </div>
+        </fieldset>
+
+        <!-- <fieldset formControlName="hobbies">
+            <legend>Hobbies | <span class="	glyphicon glyphicon-plus" (click)="addHobby()"></span></legend>
+            <div class="input-group" *ngFor="let hobbyControl of userForm.get('hobbies')?.controls; let i = index">
+                <input type="text" class="form-control" [formControlName]="i" placeholder="Hobby">
+                <span class="input-group-addon glyphicon glyphicon-trash" (click)="deleteHobby(i)"></span>
+            </div>
+        </fieldset> -->
+
+        <button class="btn btn-primary" type="submit">Submit</button> |
+        <button class="btn btn-warning" type="button" (click)="resetForm()">Reset</button>
+    </form>
+</div>
