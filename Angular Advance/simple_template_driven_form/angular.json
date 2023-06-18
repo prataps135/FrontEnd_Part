@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Tour_of_heroes": {
+    "simple_template_driven_form": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tour-of-heroes",
+            "outputPath": "dist/simple_template_driven_form",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Tour_of_heroes:build:production"
+              "browserTarget": "simple_template_driven_form:build:production"
             },
             "development": {
-              "browserTarget": "Tour_of_heroes:build:development"
+              "browserTarget": "simple_template_driven_form:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Tour_of_heroes:build"
+            "browserTarget": "simple_template_driven_form:build"
           }
         },
         "test": {
@@ -94,8 +94,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "a8accefa-49dc-49f4-bf84-2b49aa3c35bf"
   }
 }
